@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button } from 'react-native';
+import styles from 'theme';
 
 export default function PlayerDashboard() {
   return (
@@ -10,21 +11,3 @@ export default function PlayerDashboard() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 24,
-    justifyContent: 'center',
-    backgroundColor: '#fff',
-  },
-  title: {
-    fontSize: 28,
-    marginBottom: 16,
-  },
-  status: {
-    fontSize: 18,
-    marginBottom: 16,
-    color: 'red',
-  },
-});

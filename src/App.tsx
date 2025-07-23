@@ -5,6 +5,8 @@ import HomeScreen from 'screens/HomeScreen';
 import PlayerDashboard from 'screens/PlayerDashboard';
 import CoachDashboard from 'screens/CoachDashboard';
 import { RootStackParamList } from 'navigation/types';
+import { StyleSheet, Text, View } from 'react-native';
+
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -19,3 +21,12 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+const style = StyleSheet.create(
+  {
+    menu:
+    {
+      backgroundColor: 'rgba(25,25,45,1)'
+    }
+
+  })
