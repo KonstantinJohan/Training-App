@@ -1,19 +1,21 @@
 import React from 'react';
-import { View, Button, StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import type { RootStackParamList } from '../navigation/types';
-import styles from 'theme';
+import { View, Text, TouchableOpacity } from 'react-native';
+import theme from 'theme';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from 'navigation/types';
 
+type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
-const HomeScreen = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-
+const HomeScreen: React.FC<Props> = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <Button title="Jag är spelare" onPress={() => navigation.navigate('Player')} />
-      <View style={{ height: 16 }} />
-      <Button title="Jag är tränare" onPress={() => navigation.navigate('Coach')} />
+    <View style={theme.container}>
+      <TouchableOpacity style={theme.button} onPress={() => navigation.navigate('Player')}>
+        <Text style={theme.buttonText}>Player</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={theme.button} onPress={() => navigation.navigate('Coach')}>
+        <Text style={theme.buttonText}>Coach</Text>
+      </TouchableOpacity>
     </View>
   );
 };

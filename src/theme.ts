@@ -1,21 +1,32 @@
 import { StyleSheet } from 'react-native';
 
-const styles = StyleSheet.create({
+
+
+export default StyleSheet.create({
   container: {
     flex: 1,
-    padding: 24,
+    backgroundColor: '#2E2E2E', // Mörk bakgrund
+    alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#fff',
+  },
+  button: {
+    backgroundColor: '#4F4F4F',
+    padding: 20,
+    marginVertical: 10,
+    borderRadius: 10,
+    width: 200,
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: '#FFF',
+    fontSize: 18,
+    textAlign: 'center',
   },
   title: {
-    fontSize: 28,
-    marginBottom: 16,
-  },
-  status: {
-    fontSize: 18,
-    marginBottom: 16,
-    color: 'red',
-  },
-});
+    fontSize: 24,
+    color: '#FFF',
+    marginBottom: 20,
+  }
 
-export default styles;
+}
+);
