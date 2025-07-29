@@ -3,19 +3,23 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RootStackParamList } from 'navigation/types';
 import HomeScreen from 'screens/HomeScreen';
-import PlayerDashboard from 'screens/PlayerDashboard';
+import ActivePlayerWorkouts from 'screens/ActivePlayerWorkouts';
 import CoachDashboard from 'screens/CoachDashboard';
-
+import SelectedWorkout from 'screens/SelectedWorkout';
+import ExerciseInfo from 'screens/ExerciseInfo';
 
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 
 
-export default function App() {
+export default function App() 
+{
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home" screenOptions={{
+      <Stack.Navigator initialRouteName="Home" screenOptions=
+      {
+        {
           headerStyle: 
           {
             backgroundColor: '#8B0000', 
@@ -25,11 +29,16 @@ export default function App() {
           {
             fontWeight: 'bold',
           },
-        }}
+        }
+      }
        >
         <Stack.Screen name="Home" component={HomeScreen}  />
-        <Stack.Screen name="Player" component={PlayerDashboard} />
+        <Stack.Screen name="Player" component={ActivePlayerWorkouts} />
         <Stack.Screen name="Coach" component={CoachDashboard} />
+        <Stack.Screen name="Workout" component={SelectedWorkout} />
+        <Stack.Screen name="Exercise" component={ExerciseInfo} />
+
+
       </Stack.Navigator>
     </NavigationContainer>
   );

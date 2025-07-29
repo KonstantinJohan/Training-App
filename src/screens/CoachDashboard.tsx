@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 
-import styles from 'theme';
+import styles from 'styles';
 
 export default function CoachDashboard() {
   return (
