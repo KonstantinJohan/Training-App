@@ -3,7 +3,6 @@ import { View, Text } from 'react-native';
 import styles from 'styles';
 
 const ExerciseInfo = () => {
-  // Hårdkodad träningsdata
   const sets = [
     {
       set: 1,
