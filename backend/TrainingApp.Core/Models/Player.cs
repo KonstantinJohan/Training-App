@@ -6,7 +6,7 @@ public class Player
     public string Name { get; set; }
     public double? PR { get; set; }
 
-    public ICollection<WorkoutAssignment> WorkoutAssignments { get; set; }
+    public List<WorkoutAssignment>? WorkoutAssignments { get; set; } = new();
 }
 
 

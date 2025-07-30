@@ -5,3 +5,8 @@ export type RootStackParamList = {
   Workout: undefined;
   Exercise: undefined;
 };
+
+export type Player = {
+  id: number;
+  name: string;
+};
