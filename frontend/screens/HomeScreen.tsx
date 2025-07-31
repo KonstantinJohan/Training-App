@@ -9,11 +9,11 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 const HomeScreen: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={theme.container}>
-      <TouchableOpacity style={theme.button} onPress={() => navigation.navigate('Player')}>
+      <TouchableOpacity style={theme.button} onPress={() => navigation.navigate('PlayerMenu')}>
         <Text style={theme.buttonText}>Player</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={theme.button} onPress={() => navigation.navigate('Coach')}>
+      <TouchableOpacity style={theme.button} onPress={() => navigation.navigate('CoachMenu')}>
         <Text style={theme.buttonText}>Coach</Text>
       </TouchableOpacity>
     </View>

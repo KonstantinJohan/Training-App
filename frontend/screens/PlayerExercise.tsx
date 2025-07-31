@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import styles from 'styles';
 
-const ExerciseInfo = () => {
+const PlayerExercise = () => {
   const sets = [
     {
       set: 1,
@@ -64,4 +64,4 @@ const ExerciseInfo = () => {
   );
 };
 
-export default ExerciseInfo;
+export default PlayerExercise;

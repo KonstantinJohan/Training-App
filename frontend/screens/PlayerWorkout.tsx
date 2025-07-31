@@ -4,7 +4,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from 'navigation/types';
 import styles from 'styles';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Workout'>;
+type Props = NativeStackScreenProps<RootStackParamList, 'PlayerWorkout'>;
 
 type Exercise = {
   name: string;
@@ -19,11 +19,11 @@ const exercises: Exercise[] = [
   { name: 'Rows', setsDone: 0, totalSets: 3, status: 'Något' },
 ];
 
-const SelectedWorkout: React.FC<Props> = ({ navigation }) => {
+const PlayerWorkout: React.FC<Props> = ({ navigation }) => {
   const renderItem = ({ item }: { item: Exercise }) => (
     <TouchableOpacity 
       style={styles.exerciseRow}
-      onPress={() => navigation.navigate('Exercise')}
+      onPress={() => navigation.navigate('PlayerExercise')}
     >
       <Text style={styles.exerciseColumn}>{item.name}</Text>
       <Text style={styles.exerciseColumn}>Sets {item.setsDone}/{item.totalSets}</Text>
@@ -43,4 +43,4 @@ const SelectedWorkout: React.FC<Props> = ({ navigation }) => {
   );
 };
 
-export default SelectedWorkout;
+export default PlayerWorkout;

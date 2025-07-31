@@ -2,12 +2,13 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RootStackParamList } from 'navigation/types';
+import AllPlayers from 'screens/AllPlayers';
 import HomeScreen from 'screens/HomeScreen';
-import ActivePlayerWorkouts from 'screens/ActivePlayerWorkouts';
-import CoachDashboard from 'screens/PlayerScreen';
-import SelectedWorkout from 'screens/SelectedWorkout';
-import ExerciseInfo from 'screens/ExerciseInfo';
-import PlayerScreen from 'screens/PlayerScreen';
+import PlayerMenu from 'screens/PlayerMenu';
+import CreatePlayer from 'screens/CreatePlayer';
+import PlayerWorkout from 'screens/PlayerWorkout';
+import PlayerExercise from 'screens/PlayerExercise';
+import CoachMenu from 'screens/CoachMenu';
 
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -33,13 +34,13 @@ export default function App()
         }
       }
        >
+        <Stack.Screen name="AllPlayers" component={AllPlayers}  />
         <Stack.Screen name="Home" component={HomeScreen}  />
-        <Stack.Screen name="Player" component={ActivePlayerWorkouts} />
-        <Stack.Screen name="Coach" component={PlayerScreen} />
-        <Stack.Screen name="Workout" component={SelectedWorkout} />
-        <Stack.Screen name="Exercise" component={ExerciseInfo} />
-
-
+        <Stack.Screen name="PlayerMenu" component={PlayerMenu} />
+        <Stack.Screen name="CoachMenu" component={CoachMenu} />
+        <Stack.Screen name="CreatePlayer" component={CreatePlayer} />
+        <Stack.Screen name="PlayerWorkout" component={PlayerWorkout} />
+        <Stack.Screen name="PlayerExercise" component={PlayerExercise} />
       </Stack.Navigator>
     </NavigationContainer>
   );
