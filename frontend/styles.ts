@@ -7,7 +7,7 @@ export default StyleSheet.create({
     container: 
     {
       flex: 1,
-      backgroundColor: '#2E2E2E', // Mörk bakgrund
+      backgroundColor: '#2E2E2E', 
       alignItems: 'center',
       justifyContent: 'center'
     },
@@ -15,7 +15,7 @@ export default StyleSheet.create({
     excerciseContainer: 
     {
       flex: 1,
-      backgroundColor: '#2E2E2E', // Mörk bakgrund
+      backgroundColor: '#2E2E2E', 
       justifyContent: 'center',
       padding: 20
     },
@@ -100,8 +100,26 @@ export default StyleSheet.create({
     {
       width: 14,
       height: 14,
-      backgroundColor: '#00C851', // Grön
+      backgroundColor: '#00C851',
       borderRadius: 3,
     },
+
+    scrollView:
+    { 
+      width: '100%', 
+      paddingHorizontal: 20, 
+      maxHeight: 400 
+    },
+
+    textBox:
+    {
+      width: 250,
+      borderWidth: 1,
+      borderColor: '#ccc',
+      borderRadius: 8,
+      backgroundColor: '#fff',
+      padding: 10,
+      marginBottom: 10,
+    }
 
 });

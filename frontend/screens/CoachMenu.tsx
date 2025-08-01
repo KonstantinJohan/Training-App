@@ -9,7 +9,7 @@ type Props = NativeStackScreenProps<RootStackParamList, 'CoachMenu'>;
 const CoachMenu: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={theme.container}>
-      <TouchableOpacity style={theme.button} onPress={() => navigation.navigate('CoachMenu')}>
+      <TouchableOpacity style={theme.button} onPress={() => navigation.navigate('AllWorkouts')}>
         <Text style={theme.buttonText}>Workouts</Text>
       </TouchableOpacity>
 

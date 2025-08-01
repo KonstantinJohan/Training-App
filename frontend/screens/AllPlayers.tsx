@@ -3,7 +3,7 @@ import { View, Text, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import axios from 'axios';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList, Player } from 'navigation/types';
-import styles from 'styles'; // Importera din stylesheet
+import styles from 'styles';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'AllPlayers'>;
 
@@ -17,7 +17,7 @@ export default function AllPlayers({ navigation }: Props) {
       const response = await axios.get<Player[]>(API_URL);
       setPlayers(response.data);
     } catch (error) {
-      Alert.alert('Fel', 'Kunde inte hämta spelare.');
+      Alert.alert('Error, could not fetch players.');
     }
   };
 
@@ -28,8 +28,8 @@ export default function AllPlayers({ navigation }: Props) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Spelare</Text>
-      <ScrollView style={{ width: '100%', paddingHorizontal: 20, maxHeight: 400 }}>
+      <Text style={styles.title}>Players</Text>
+      <ScrollView style={styles.scrollView}>
         {players.map((p) => (
           <View key={p.id} style={styles.exerciseRow}>
             <Text style={styles.exerciseColumn}>{p.number}</Text>

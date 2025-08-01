@@ -5,43 +5,54 @@ import { RootStackParamList } from 'navigation/types';
 import styles from 'styles';
 import axios from 'axios';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'CreatePlayer'>;
+type Props = NativeStackScreenProps<RootStackParamList, 'CreateWorkout'>;
 
-const API_URL = 'http://192.168.0.102:5255/api/players';
+const API_URL = 'http://192.168.0.102:5255/api/workouts';
 
-export default function CreatePlayer({ navigation }: Props) {
+export default function CreateWorkout({ navigation }: Props) {
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+
 
   const handleSubmit = async () => {
-    if (!name.trim() || !number.trim()) return;
+    if (!name.trim() || !date.trim() || !time.trim() ) return;
 
     try {
       await axios.post(API_URL, {
         name,
-        number: parseInt(number, 10),
+        date,
+        time
       });
 
       navigation.goBack();
     } catch (error) {
-      Alert.alert('Fel', 'Kunde inte skapa spelare.');
+      Alert.alert('Could not create workout');
     }
   };
 
   return (
     <View style={styles.container}>
       <TextInput
-        placeholder="Namn på spelare"
+        placeholder="Weekday of workout"
         placeholderTextColor="#aaa"
         value={name}
         onChangeText={setName}
         style={styles.textBox}
       />
       <TextInput
-        placeholder="Nummer"
+        placeholder="Date 27/7"
         placeholderTextColor="#aaa"
-        value={number}
-        onChangeText={setNumber}
+        value={date}
+        onChangeText={setDate}
+        keyboardType="numeric"
+        style={styles.textBox}
+      />
+        <TextInput
+        placeholder="Time 12.00 - 14.00"
+        placeholderTextColor="#aaa"
+        value={time}
+        onChangeText={setTime}
         keyboardType="numeric"
         style={styles.textBox}
       />
